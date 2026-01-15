@@ -1,0 +1,61 @@
+// ...existing code...
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Aloqa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>📞 Biz bilan bog‘lanish</h1>
+    <nav>
+        <a href="index.html">Do‘konlar</a>
+        <a href="buket.html">Buket gullar</a>
+        <a href="tuvak.html">Tuvak gullar</a>
+        <a href="aloqa.html">Aloqa</a>
+    </nav>
+</header>
+
+<section class="contact">
+    <div class="contact-info">
+        <h2>📍 Aloqa ma’lumotlari</h2>
+        <p><strong>Manzil:</strong> Toshkent shahri</p>
+        <p><strong>Telefon:</strong> +998 90 123 45 67</p>
+        <p><strong>Email:</strong> info@guldukoni.uz</p>
+        <p><strong>Ish vaqti:</strong> 09:00 – 21:00</p>
+    </div>
+
+    <div class="contact-form">
+        <h2>✉️ Xabar yuborish</h2>
+        <form onsubmit="sendMessage(event)">
+            <input type="text" name="name" placeholder="Ismingiz" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" placeholder="Xabaringiz" required></textarea>
+            <button type="submit">Yuborish</button>
+        </form>
+    </div>
+</section>
+
+<script>
+function sendMessage(e){
+  e.preventDefault();
+  const form = e.target;
+  const name = form.querySelector('input[name=\"name\"]').value.trim();
+  const email = form.querySelector('input[name=\"email\"]').value.trim();
+  const msg = form.querySelector('textarea[name=\"message\"]').value.trim();
+  if(!name || !email || !msg){
+    alert('Iltimos, hamma maydonlarni to‘ldiring.');
+    return;
+  }
+  // Bu yerga serverga yuborish kodini qo'shing (fetch / AJAX)
+  alert('Xabaringiz jo‘natildi. Rahmat, ' + name + '!');
+  form.reset();
+}
+</script>
+
+</body>
+</html>
+// ...existing code...
